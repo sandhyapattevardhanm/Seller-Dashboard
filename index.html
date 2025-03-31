@@ -1,128 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seller Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
-</head>
-<body class="bg-gray-100 font-sans">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body,
+      html {
+        overflow: hidden;
+        height: 100%;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
     <div class="flex h-screen">
-        <!-- Sidebar -->
-        <aside class="w-1/5 bg-black text-white p-6 space-y-4">
-            <h1 class="text-xl font-bold">LOGO-NAME</h1>
-            <nav class="space-y-4">
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>🏠</span><span>Overview</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>🛒</span><span>Products</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>👤</span><span>Customer</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>📦</span><span>Orders</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>🚚</span><span>Shipment</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>⚙️</span><span>Store Setting</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>🤝</span><span>Platform Partner</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>💬</span><span>Feedback</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-                    <span>❓</span><span>Help & Support</span>
-                </a>
-            </nav>
-        </aside>
+      <!-- Sidebar -->
+      <aside class="w-1/5 bg-black text-white p-6 space-y-4 fixed h-full">
+        <h1 class="text-xl font-bold">LOGO-NAME</h1>
+        <nav class="space-y-4">
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🏠</span><span>Overview</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🛒</span><span>Products</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>📦</span><span>Orders</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🚚</span><span>Shipment</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>⚙️</span><span>Store Setting</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🤝</span><span>Platform Partner</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>💬</span><span>Feedback</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>❓</span><span>Help & Support</span>
+          </a>
+        </nav>
+      </aside>
 
-        <!-- Main Content -->
-        <main class="w-4/5 p-8">
-            <div class="flex justify-between">
-                <div class="mb-4 w-1/2 relative">
-                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                    <input type="text" placeholder="Search..." class="w-full pl-10 p-2 border border-gray-300 rounded-lg shadow-sm">
-                    <i class="fas fa-microphone absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
-                        <img src="https://via.placeholder.com/40" alt="Profile Photo" class="w-full h-full object-cover">
-                    </div>                                        
-                    <span class="text-sm leading-tight">
-                        <span class="font-semibold block">Bishop</span> 
-                        <span class="text-gray-500">BishopHealthmund@gmail.com</span>
-                    </span>
-                    <i class="fas fa-chevron-down text-gray-500"></i>
-                </div>                                
-            </div>                      
-            <div class="flex justify-between">
-                <h2 class="text-2xl font-semibold">Welcome back, <span class="text-indigo-600">Bishop!</span></h2>
+      <!-- Main Content -->
+      <main class="w-4/5 ml-[20%] p-8 overflow-hidden">
+        <!-- Search Bar & Profile -->
+        <div class="flex justify-between items-center">
+          <div class="mb-4 w-1/2 relative">
+            <i
+              class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+            ></i>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="w-full pl-10 p-2 border border-gray-300 rounded-lg shadow-sm"
+            />
+            <i
+              class="fas fa-microphone absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+            ></i>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div
+              class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="https://via.placeholder.com/40"
+                alt="Profile Photo"
+                class="w-full h-full object-cover"
+              />
             </div>
+            <span class="text-sm leading-tight">
+              <span class="font-semibold block">Bishop</span>
+              <span class="text-gray-500">BishopHealthmund@gmail.com</span>
+            </span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+        </div>
 
-            <!-- Stats -->
-            <div class="grid grid-cols-3 gap-4 mt-6">
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <p class="text-gray-500">AVG. Order Value</p>
-                    <h3 class="text-xl font-bold">$77.21</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <p class="text-gray-500">Total Orders</p>
-                    <h3 class="text-xl font-bold">$2,107</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <p class="text-gray-500">Lifetime Value</p>
-                    <h3 class="text-xl font-bold">$653</h3>
-                </div>
-            </div>
+        <div class="flex justify-between">
+          <h2 class="text-2xl font-semibold">
+            Welcome back, <span class="text-indigo-600">Bishop!</span>
+          </h2>
+        </div>
 
-            <!-- Sales Graph Placeholder -->
-            <div class="bg-white p-6 mt-6 rounded-lg shadow">
-                <h3 class="text-lg font-semibold">Sales Overtime</h3>
-                <div class="h-40 bg-gray-200 mt-4"></div>
-            </div>
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <p class="text-gray-500">AVG. Order Value</p>
+            <h3 class="text-xl font-bold">$77.21</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <p class="text-gray-500">Total Orders</p>
+            <h3 class="text-xl font-bold">$2,107</h3>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <p class="text-gray-500">Lifetime Value</p>
+            <h3 class="text-xl font-bold">$653</h3>
+          </div>
+        </div>
 
-            <!-- Latest Orders -->
-            <div class="bg-white p-6 mt-6 rounded-lg shadow">
-                <h3 class="text-lg font-semibold">Latest Orders</h3>
-                <table class="w-full mt-4 text-left border-t">
-                    <thead>
-                        <tr>
-                            <th class="py-2">Order ID</th>
-                            <th>Product</th>
-                            <th>Order Date</th>
-                            <th>Price</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-t">
-                            <td class="py-2">#2456JL</td>
-                            <td>Nike Sportswear</td>
-                            <td>Jan 12, 12:23 pm</td>
-                            <td>$134.00</td>
-                            <td>Transfer</td>
-                            <td class="text-blue-500">Processing</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="py-2">#5435DF</td>
-                            <td>Acqua di Parma</td>
-                            <td>May 01, 01:13 pm</td>
-                            <td>$23.00</td>
-                            <td>Credit Card</td>
-                            <td class="text-green-500">Completed</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
+        <!-- Sales Overtime -->
+        <div class="bg-white p-6 mt-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold">Sales Overtime</h3>
+          <div class="h-40 bg-gray-200 mt-4"></div>
+        </div>
+
+        <!-- Latest Orders -->
+        <div class="bg-white p-6 mt-6 rounded-lg shadow h-40 mb-4 overflow-y-auto no-scrollbar">
+          <h3 class="text-lg font-semibold">Latest Orders</h3>
+          <table class="w-full mt-4 mb-2 text-left border-t">
+            <thead>
+              <tr>
+                <th class="py-2 border-t">Order ID</th>
+                <th>Product</th>
+                <th>Order Date</th>
+                <th>Price</th>
+                <th>Payment</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="py-2">#2456JL</td>
+                <td>Nike Sportswear</td>
+                <td>Jan 12, 12:23 pm</td>
+                <td>$134.00</td>
+                <td>Transfer</td>
+                <td class="text-blue-500">Processing</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#5435DF</td>
+                <td>Acqua di Parma</td>
+                <td>May 01, 01:13 pm</td>
+                <td>$23.00</td>
+                <td>Credit Card</td>
+                <td class="text-green-500">Completed</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#2456JL</td>
+                <td>Nike Sportswear</td>
+                <td>Jan 12, 12:23 pm</td>
+                <td>$134.00</td>
+                <td>Transfer</td>
+                <td class="text-blue-500">Processing</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#5435DF</td>
+                <td>Acqua di Parma</td>
+                <td>May 01, 01:13 pm</td>
+                <td>$23.00</td>
+                <td>Credit Card</td>
+                <td class="text-green-500">Completed</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#2456JL</td>
+                <td>Nike Sportswear</td>
+                <td>Jan 12, 12:23 pm</td>
+                <td>$134.00</td>
+                <td>Transfer</td>
+                <td class="text-blue-500">Processing</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#5435DF</td>
+                <td>Acqua di Parma</td>
+                <td>May 01, 01:13 pm</td>
+                <td>$23.00</td>
+                <td>Credit Card</td>
+                <td class="text-green-500">Completed</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#2456JL</td>
+                <td>Nike Sportswear</td>
+                <td>Jan 12, 12:23 pm</td>
+                <td>$134.00</td>
+                <td>Transfer</td>
+                <td class="text-blue-500">Processing</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#5435DF</td>
+                <td>Acqua di Parma</td>
+                <td>May 01, 01:13 pm</td>
+                <td>$23.00</td>
+                <td>Credit Card</td>
+                <td class="text-green-500">Completed</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#2456JL</td>
+                <td>Nike Sportswear</td>
+                <td>Jan 12, 12:23 pm</td>
+                <td>$134.00</td>
+                <td>Transfer</td>
+                <td class="text-blue-500">Processing</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">#5435DF</td>
+                <td>Acqua di Parma</td>
+                <td>May 01, 01:13 pm</td>
+                <td>$23.00</td>
+                <td>Credit Card</td>
+                <td class="text-green-500">Completed</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-4" colspan="6"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
     </div>
-</body>
+  </body>
 </html>
