@@ -1,0 +1,81 @@
+.dashboard {
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+  }
+  
+  .date-range {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .content {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .chart {
+    flex: 1;
+  }
+  
+  .donut-chart {
+    width: 150px;
+    height: 150px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin: auto;
+  }
+  
+  .profit-details {
+    flex: 1.5;
+  }
+  
+  .total-profit {
+    margin-bottom: 20px;
+  }
+  
+  .total-profit p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .total-profit h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+  
+  .categories {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .color-box {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    border-radius: 3px;
+  }
+  
+  .amount {
+    font-weight: bold;
+  }
+  
