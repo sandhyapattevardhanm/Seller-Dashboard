@@ -1,137 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard - Upload Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body,
+      html {
+        overflow: hidden;
+        height: 100%;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seller Dashboard - Upload Product</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
-    crossorigin="anonymous"></script>
-  <style>
-    body,
-    html {
-      overflow: hidden;
-      height: 100%;
-    }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
 
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
 
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
-</head>
+  <body class="bg-gray-100 font-sans">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <aside class="w-1/5 bg-black text-white p-6 space-y-4 fixed h-full">
+        <h1 class="text-xl font-bold">LOGO-NAME</h1>
+        <nav class="space-y-4">
+          <a
+            href="index.html"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🏠</span><span>Overview</span>
+          </a>
+          <a
+            href="products.html"
+            class="flex items-center space-x-2 text-white font-semibold"
+          >
+            <span>🛒</span><span>Products</span>
+          </a>
+          <a
+            href="orders.html"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>📦</span><span>Orders</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🚚</span><span>Shipment</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>⚙️</span><span>Store Setting</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>🤝</span><span>Platform Partner</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>💬</span><span>Feedback</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white"
+          >
+            <span>❓</span><span>Help & Support</span>
+          </a>
+        </nav>
+      </aside>
 
-<body class="bg-gray-100 font-sans">
-  <div class="flex h-screen">
-    <!-- Sidebar -->
-    <aside class="w-1/5 bg-black text-white p-6 space-y-4 fixed h-full">
-      <h1 class="text-xl font-bold">LOGO-NAME</h1>
-      <nav class="space-y-4">
-        <a href="index.html" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>🏠</span><span>Overview</span>
-        </a>
-        <a href="products.html" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>🛒</span><span>Products</span>
-        </a>
-        <a href="orders.html" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>📦</span><span>Orders</span>
-        </a>
-        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>🚚</span><span>Shipment</span>
-        </a>
-        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>⚙️</span><span>Store Setting</span>
-        </a>
-        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>🤝</span><span>Platform Partner</span>
-        </a>
-        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>💬</span><span>Feedback</span>
-        </a>
-        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white">
-          <span>❓</span><span>Help & Support</span>
-        </a>
-      </nav>
-    </aside>
+      <!-- Main Content -->
+      <main class="w-4/5 ml-[20%] p-8 overflow-auto">
+        <h2 class="text-2xl font-bold mb-6">Upload Product</h2>
 
-    <!-- Main Content -->
-    <main class="w-4/5 ml-[20%] p-8 overflow-auto">
-      <h2 class="text-2xl font-bold mb-6">Upload Product</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <!-- Video Upload Section -->
+          <div
+            class="border-2 border-dashed border-gray-300 p-6 text-center rounded-lg mb-6"
+          >
+            <input
+              type="file"
+              accept="video/*"
+              class="hidden"
+              id="video-upload"
+            />
+            <label for="video-upload" class="cursor-pointer">
+              <i class="fas fa-upload text-gray-400 text-3xl"></i>
+              <p class="text-gray-600 mt-2">Click to upload product video</p>
+              <p class="text-gray-400 text-sm">(MP4, MOV - Max 5GB)</p>
+            </label>
+          </div>
 
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <!-- Video Upload Section -->
-        <div class="border-2 border-dashed border-gray-300 p-6 text-center rounded-lg mb-6">
-          <input type="file" accept="video/*" class="hidden" id="video-upload" />
-          <label for="video-upload" class="cursor-pointer">
-            <i class="fas fa-upload text-gray-400 text-3xl"></i>
-            <p class="text-gray-600 mt-2">Click to upload product video</p>
-            <p class="text-gray-400 text-sm">(MP4, MOV - Max 5GB)</p>
-          </label>
+          <!-- Product Form -->
+          <form class="space-y-4">
+            <div>
+              <label class="block text-gray-700 font-semibold"
+                >Product Title</label
+              >
+              <input
+                type="text"
+                placeholder="Enter product title"
+                class="w-full p-2 border rounded"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-semibold"
+                >Description</label
+              >
+              <textarea
+                placeholder="Enter product description"
+                class="w-full p-2 border rounded"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-gray-700 font-semibold">Price</label>
+                <input
+                  type="number"
+                  placeholder="0.00"
+                  class="w-full p-2 border rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-semibold"
+                  >Quantity</label
+                >
+                <input
+                  type="number"
+                  placeholder="0"
+                  class="w-full p-2 border rounded"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-semibold"
+                >Thumbnail Image</label
+              >
+              <input
+                type="file"
+                accept="image/*"
+                class="w-full p-2 border rounded"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-semibold">Category</label>
+              <select class="w-full p-2 border rounded">
+                <option>Select Category</option>
+                <option>Clothing</option>
+                <option>Electronics</option>
+                <option>Home & Kitchen</option>
+                <option>Beauty & Health</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-semibold">Brand</label>
+              <input
+                type="text"
+                placeholder="Enter brand name"
+                class="w-full p-2 border rounded"
+                required
+              />
+            </div>
+
+            <div class="flex justify-end space-x-4">
+              <button
+                type="reset"
+                class="bg-gray-300 text-black px-6 py-2 rounded"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="bg-black text-white px-6 py-2 rounded"
+              >
+                Upload Product
+              </button>
+            </div>
+          </form>
         </div>
-
-        <!-- Product Form -->
-        <form class="space-y-4">
-          <div>
-            <label class="block text-gray-700 font-semibold">Product Title</label>
-            <input type="text" placeholder="Enter product title" class="w-full p-2 border rounded" required />
-          </div>
-
-          <div>
-            <label class="block text-gray-700 font-semibold">Description</label>
-            <textarea placeholder="Enter product description" class="w-full p-2 border rounded" rows="4"
-              required></textarea>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-gray-700 font-semibold">Price</label>
-              <input type="number" placeholder="0.00" class="w-full p-2 border rounded" required />
-            </div>
-
-            <div>
-              <label class="block text-gray-700 font-semibold">Quantity</label>
-              <input type="number" placeholder="0" class="w-full p-2 border rounded" required />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-gray-700 font-semibold">Thumbnail Image</label>
-            <input type="file" accept="image/*" class="w-full p-2 border rounded" required />
-          </div>
-
-          <div>
-            <label class="block text-gray-700 font-semibold">Category</label>
-            <select class="w-full p-2 border rounded">
-              <option>Select Category</option>
-              <option>Clothing</option>
-              <option>Electronics</option>
-              <option>Home & Kitchen</option>
-              <option>Beauty & Health</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-gray-700 font-semibold">Brand</label>
-            <input type="text" placeholder="Enter brand name" class="w-full p-2 border rounded" required />
-          </div>
-
-          <div class="flex justify-end space-x-4">
-            <button type="reset" class="bg-gray-300 text-black px-6 py-2 rounded">
-              Cancel
-            </button>
-            <button type="submit" class="bg-black text-white px-6 py-2 rounded">
-              Upload Product
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
-  </div>
-</body>
-
+      </main>
+    </div>
+  </body>
 </html>
