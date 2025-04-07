@@ -10,12 +10,6 @@
       crossorigin="anonymous"
     ></script>
     <style>
-      body,
-      html {
-        overflow: hidden;
-        height: 100%;
-      }
-
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -28,68 +22,78 @@
   </head>
 
   <body class="bg-gray-100 font-sans">
-    <div class="flex h-screen">
+    <!-- Mobile Hamburger -->
+    <header
+      class="lg:hidden flex items-center justify-between bg-white p-4 shadow fixed top-0 left-0 right-0 z-40"
+    >
+      <button id="hamburger" class="text-2xl focus:outline-none">☰</button>
+    </header>
+
+    <div class="flex lg:h-screen">
       <!-- Sidebar -->
-      <aside class="w-1/5 bg-black text-white p-6 space-y-4 fixed h-full">
-        <h1 class="text-xl font-bold">LOGO-NAME</h1>
+      <aside
+        id="sidebar"
+        class="fixed top-0 left-0 w-64 h-full bg-black text-white p-6 space-y-4 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+      >
+        <h1 class="text-xl font-bold mb-4">LOGO-NAME</h1>
         <nav class="space-y-4">
           <a
             href="index.html"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>🏠</span><span>Overview</span></a
           >
-            <span>🏠</span><span>Overview</span>
-          </a>
           <a
             href="products.html"
             class="flex items-center space-x-2 text-white font-semibold"
+            ><span>🛒</span><span>Products</span></a
           >
-            <span>🛒</span><span>Products</span>
-          </a>
           <a
             href="orders.html"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>📦</span><span>Orders</span></a
           >
-            <span>📦</span><span>Orders</span>
-          </a>
           <a
             href="#"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>🚚</span><span>Shipment</span></a
           >
-            <span>🚚</span><span>Shipment</span>
-          </a>
           <a
             href="#"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>⚙️</span><span>Store Setting</span></a
           >
-            <span>⚙️</span><span>Store Setting</span>
-          </a>
           <a
             href="#"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>🤝</span><span>Platform Partner</span></a
           >
-            <span>🤝</span><span>Platform Partner</span>
-          </a>
           <a
             href="#"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>💬</span><span>Feedback</span></a
           >
-            <span>💬</span><span>Feedback</span>
-          </a>
           <a
             href="#"
             class="flex items-center space-x-2 text-gray-300 hover:text-white"
+            ><span>❓</span><span>Help & Support</span></a
           >
-            <span>❓</span><span>Help & Support</span>
-          </a>
         </nav>
       </aside>
 
+      <!-- Overlay -->
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"
+      ></div>
+
       <!-- Main Content -->
-      <main class="w-4/5 ml-[20%] p-8 overflow-auto">
-        <h2 class="text-2xl font-bold mb-6">Upload Product</h2>
+      <main
+        class="flex-1 lg:mt-0 mb-6 lg:ml-64 p-6 pt-16 lg:pt-4 overflow-y-auto max-h-screen"
+      >
+        <h2 class="text-2xl mt-4 font-bold mb-6">Upload Product</h2>
 
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <!-- Video Upload Section -->
+          <!-- Video Upload -->
           <div
             class="border-2 border-dashed border-gray-300 p-6 text-center rounded-lg mb-6"
           >
@@ -132,7 +136,7 @@
               ></textarea>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-gray-700 font-semibold">Price</label>
                 <input
@@ -142,7 +146,6 @@
                   required
                 />
               </div>
-
               <div>
                 <label class="block text-gray-700 font-semibold"
                   >Quantity</label
@@ -207,5 +210,22 @@
         </div>
       </main>
     </div>
+
+    <script>
+      // Sidebar toggle
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const hamburger = document.getElementById("hamburger");
+
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+    </script>
   </body>
 </html>

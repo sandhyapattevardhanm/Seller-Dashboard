@@ -7,242 +7,261 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100 text-black font-sans">
-    <div class="flex h-screen">
-      <!-- Sidebar -->
-      <aside class="w-1/5 bg-black text-white p-6 space-y-4 fixed h-full">
-        <h1 class="text-xl font-bold">LOGO-NAME</h1>
-        <nav class="space-y-4">
-          <a
-            href="index.html"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>🏠</span><span>Overview</span>
-          </a>
-          <a
-            href="products.html"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>🛒</span><span>Products</span>
-          </a>
-          <a
-            href="orders.html"
-            class="flex items-center space-x-2 text-white font-semibold"
-          >
-            <span>📦</span><span>Orders</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>🚚</span><span>Shipment</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>⚙️</span><span>Store Setting</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>🤝</span><span>Platform Partner</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>💬</span><span>Feedback</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>❓</span><span>Help & Support</span>
-          </a>
-        </nav>
-      </aside>
+    <!-- Hamburger & Topbar (visible on mobile) -->
+    <header
+      class="lg:hidden flex items-center justify-between bg-white p-4 shadow fixed top-0 left-0 right-0 z-40"
+    >
+      <button id="hamburger" class="text-2xl focus:outline-none">☰</button>
+    </header>
 
-      <!-- Main Content -->
-      <main class="w-4/5 ml-[20%] p-8 overflow-auto">
-        <div class="mb-6">
-          <h2 class="text-2xl font-bold">Manage Orders</h2>
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 left-0 w-64 h-full bg-black text-white p-6 space-y-4 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+    >
+      <h1 class="text-xl font-bold mb-4">LOGO-NAME</h1>
+      <nav class="space-y-4">
+        <a
+          href="index.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🏠</span><span>Overview</span>
+        </a>
+        <a
+          href="products.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🛒</span><span>Products</span>
+        </a>
+        <a
+          href="orders.html"
+          class="flex items-center space-x-2 text-white font-semibold"
+        >
+          <span>📦</span><span>Orders</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🚚</span><span>Shipment</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>⚙️</span><span>Store Setting</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🤝</span><span>Platform Partner</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>💬</span><span>Feedback</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>❓</span><span>Help & Support</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"
+    ></div>
+
+    <!-- Main Content -->
+    <main class="lg:ml-64 mt-16 lg:mt-0 p-6 overflow-auto">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold">Manage Orders</h2>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex w-full mb-4 border-b border-gray-300">
+        <button
+          class="flex-1 py-2 px-2 text-xs sm:text-sm tab-btn border-b-2 border-black text-black font-semibold"
+          data-tab="pending"
+        >
+          Pending
+        </button>
+        <button
+          class="flex-1 py-2 px-2 text-xs sm:text-sm tab-btn text-gray-600 hover:text-black"
+          data-tab="initiated"
+        >
+          Initiated
+        </button>
+        <button
+          class="flex-1 py-2 px-2 text-xs sm:text-sm tab-btn text-gray-600 hover:text-black"
+          data-tab="shipped"
+        >
+          Shipped
+        </button>
+        <button
+          class="flex-1 py-2 px-2 text-xs sm:text-sm tab-btn text-gray-600 hover:text-black"
+          data-tab="cancelled"
+        >
+          Cancelled
+        </button>
+      </div>
+
+      <!-- Tab Contents -->
+      <div id="pending" class="tab-content">
+        <div class="bg-white rounded shadow overflow-auto">
+          <table class="min-w-full text-left text-sm whitespace-nowrap">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-6 py-3">Order ID</th>
+                <th class="px-6 py-3">Product</th>
+                <th class="px-6 py-3">Customer</th>
+                <th class="px-6 py-3">Date</th>
+                <th class="px-6 py-3">Price</th>
+                <th class="px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-800">
+              <tr class="border-t">
+                <td class="px-6 py-4">#102P</td>
+                <td class="px-6 py-4">T-shirt</td>
+                <td class="px-6 py-4">Alex</td>
+                <td class="px-6 py-4">Apr 7, 2025</td>
+                <td class="px-6 py-4">$30.00</td>
+                <td class="px-6 py-4 text-yellow-600">Pending</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
 
-        <!-- Tabs -->
-        <div class="flex space-x-6 mb-4 border-b border-gray-300">
-          <button
-            class="py-2 px-4 tab-btn border-b-2 border-black text-black font-semibold"
-            data-tab="pending"
-          >
-            Pending
-          </button>
-          <button
-            class="py-2 px-4 tab-btn text-gray-600 hover:text-black"
-            data-tab="initiated"
-          >
-            Initiated
-          </button>
-          <button
-            class="py-2 px-4 tab-btn text-gray-600 hover:text-black"
-            data-tab="shipped"
-          >
-            Shipped
-          </button>
-          <button
-            class="py-2 px-4 tab-btn text-gray-600 hover:text-black"
-            data-tab="cancelled"
-          >
-            Cancelled
-          </button>
+      <div id="initiated" class="tab-content hidden">
+        <div class="bg-white rounded shadow overflow-auto">
+          <table class="min-w-full text-left text-sm whitespace-nowrap">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-6 py-3">Order ID</th>
+                <th class="px-6 py-3">Product</th>
+                <th class="px-6 py-3">Customer</th>
+                <th class="px-6 py-3">Date</th>
+                <th class="px-6 py-3">Price</th>
+                <th class="px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-800">
+              <tr class="border-t">
+                <td class="px-6 py-4">#102I</td>
+                <td class="px-6 py-4">Sneakers</td>
+                <td class="px-6 py-4">Bob</td>
+                <td class="px-6 py-4">Apr 4, 2025</td>
+                <td class="px-6 py-4">$85.00</td>
+                <td class="px-6 py-4 text-blue-500">Initiated</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
 
-        <!-- Tab Contents -->
-        <div id="pending" class="tab-content">
-          <div class="bg-white rounded shadow overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-gray-200 text-gray-700">
-                <tr>
-                  <th class="px-6 py-3">Order ID</th>
-                  <th class="px-6 py-3">Product</th>
-                  <th class="px-6 py-3">Customer</th>
-                  <th class="px-6 py-3">Date</th>
-                  <th class="px-6 py-3">Price</th>
-                  <th class="px-6 py-3">Status</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-800">
-                <tr class="border-t">
-                  <td class="px-6 py-4">#102P</td>
-                  <td class="px-6 py-4">T-shirt</td>
-                  <td class="px-6 py-4">Alex</td>
-                  <td class="px-6 py-4">Apr 7, 2025</td>
-                  <td class="px-6 py-4">$30.00</td>
-                  <td class="px-6 py-4 text-yellow-600">Pending</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div id="shipped" class="tab-content hidden">
+        <div class="bg-white rounded shadow overflow-auto">
+          <table class="min-w-full text-left text-sm whitespace-nowrap">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-6 py-3">Order ID</th>
+                <th class="px-6 py-3">Product</th>
+                <th class="px-6 py-3">Customer</th>
+                <th class="px-6 py-3">Date</th>
+                <th class="px-6 py-3">Price</th>
+                <th class="px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-800">
+              <tr class="border-t">
+                <td class="px-6 py-4">#103S</td>
+                <td class="px-6 py-4">Watch</td>
+                <td class="px-6 py-4">Cathy</td>
+                <td class="px-6 py-4">Apr 2, 2025</td>
+                <td class="px-6 py-4">$150.00</td>
+                <td class="px-6 py-4 text-green-600">Shipped</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
 
-        <div id="initiated" class="tab-content hidden">
-          <div class="bg-white rounded shadow overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-gray-200 text-gray-700">
-                <tr>
-                  <th class="px-6 py-3">Order ID</th>
-                  <th class="px-6 py-3">Product</th>
-                  <th class="px-6 py-3">Customer</th>
-                  <th class="px-6 py-3">Date</th>
-                  <th class="px-6 py-3">Price</th>
-                  <th class="px-6 py-3">Status</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-800">
-                <tr class="border-t">
-                  <td class="px-6 py-4">#102I</td>
-                  <td class="px-6 py-4">Sneakers</td>
-                  <td class="px-6 py-4">Bob</td>
-                  <td class="px-6 py-4">Apr 4, 2025</td>
-                  <td class="px-6 py-4">$85.00</td>
-                  <td class="px-6 py-4 text-blue-500">Initiated</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div id="cancelled" class="tab-content hidden">
+        <div class="bg-white rounded shadow overflow-auto">
+          <table class="min-w-full text-left text-sm whitespace-nowrap">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-6 py-3">Order ID</th>
+                <th class="px-6 py-3">Product</th>
+                <th class="px-6 py-3">Customer</th>
+                <th class="px-6 py-3">Date</th>
+                <th class="px-6 py-3">Price</th>
+                <th class="px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-800">
+              <tr class="border-t">
+                <td class="px-6 py-4">#104C</td>
+                <td class="px-6 py-4">Backpack</td>
+                <td class="px-6 py-4">Daniel</td>
+                <td class="px-6 py-4">Apr 1, 2025</td>
+                <td class="px-6 py-4">$60.00</td>
+                <td class="px-6 py-4 text-red-600">Cancelled</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+    </main>
 
-        <div id="shipped" class="tab-content hidden">
-          <div class="bg-white rounded shadow overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-gray-200 text-gray-700">
-                <tr>
-                  <th class="px-6 py-3">Order ID</th>
-                  <th class="px-6 py-3">Product</th>
-                  <th class="px-6 py-3">Customer</th>
-                  <th class="px-6 py-3">Date</th>
-                  <th class="px-6 py-3">Price</th>
-                  <th class="px-6 py-3">Status</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-800">
-                <tr class="border-t">
-                  <td class="px-6 py-4">#103S</td>
-                  <td class="px-6 py-4">Watch</td>
-                  <td class="px-6 py-4">Cathy</td>
-                  <td class="px-6 py-4">Apr 2, 2025</td>
-                  <td class="px-6 py-4">$150.00</td>
-                  <td class="px-6 py-4 text-green-600">Shipped</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div id="cancelled" class="tab-content hidden">
-          <div class="bg-white rounded shadow overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-gray-200 text-gray-700">
-                <tr>
-                  <th class="px-6 py-3">Order ID</th>
-                  <th class="px-6 py-3">Product</th>
-                  <th class="px-6 py-3">Customer</th>
-                  <th class="px-6 py-3">Date</th>
-                  <th class="px-6 py-3">Price</th>
-                  <th class="px-6 py-3">Status</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-800">
-                <tr class="border-t">
-                  <td class="px-6 py-4">#104C</td>
-                  <td class="px-6 py-4">Backpack</td>
-                  <td class="px-6 py-4">Daniel</td>
-                  <td class="px-6 py-4">Apr 1, 2025</td>
-                  <td class="px-6 py-4">$60.00</td>
-                  <td class="px-6 py-4 text-red-600">Cancelled</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </main>
-    </div>
-
-    <!-- Script for tab switch -->
+    <!-- JS -->
     <script>
+      // Tabs
       const tabButtons = document.querySelectorAll(".tab-btn");
       const tabContents = document.querySelectorAll(".tab-content");
-
       tabButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
           const target = btn.getAttribute("data-tab");
-
-          // Reset all buttons
-          tabButtons.forEach((b) => {
+          tabButtons.forEach((b) =>
             b.classList.remove(
               "border-b-2",
               "border-black",
               "text-black",
               "font-semibold"
-            );
-            b.classList.add("text-gray-600");
-          });
-
-          // Hide all tab content
+            )
+          );
           tabContents.forEach((content) => content.classList.add("hidden"));
-
-          // Set clicked button as active
-          btn.classList.remove("text-gray-600");
           btn.classList.add(
             "border-b-2",
             "border-black",
             "text-black",
             "font-semibold"
           );
-
-          // Show the target tab content
           document.getElementById(target).classList.remove("hidden");
         });
+      });
+
+      // Sidebar toggle
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const hamburger = document.getElementById("hamburger");
+
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
       });
     </script>
   </body>
