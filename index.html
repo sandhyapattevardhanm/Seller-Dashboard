@@ -35,24 +35,24 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-      class="w-64 bg-black text-white p-6 space-y-4 fixed h-full z-30 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
-      <h1 class="text-xl font-bold">LOGO-NAME</h1>
+      class="fixed top-0 left-0 w-64 h-full bg-black text-white p-6 space-y-4 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
+      <h1 class="text-xl font-bold mb-4">LOGO-NAME</h1>
       <nav class="space-y-4">
         <a href="index.html"
-          class="flex items-center space-x-2 text-white hover:text-gray-300"><span>🏠</span><span>Overview</span></a>
+          class="flex items-center space-x-2 text-white font-semibold"><span>🏠</span><span>Overview</span></a>
         <a href="products.html"
-          class="flex items-center space-x-2 text-white hover:text-gray-300"><span>🛒</span><span>Products</span></a>
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>🛒</span><span>Products</span></a>
         <a href="orders.html"
-          class="flex items-center space-x-2 text-white hover:text-gray-300"><span>📦</span><span>Orders</span></a>
-        <a href="#"
-          class="flex items-center space-x-2 text-white hover:text-gray-300"><span>🚚</span><span>Shipment</span></a>
-        <a href="#" class="flex items-center space-x-2 text-white hover:text-gray-300"><span>⚙️</span><span>Store
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>📦</span><span>Orders</span></a>
+        <a href="shipment.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>🚚</span><span>Shipment</span></a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>⚙️</span><span>Store
             Setting</span></a>
-        <a href="#" class="flex items-center space-x-2 text-white hover:text-gray-300"><span>🤝</span><span>Platform
+        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>🤝</span><span>Platform
             Partner</span></a>
         <a href="#"
-          class="flex items-center space-x-2 text-white hover:text-gray-300"><span>💬</span><span>Feedback</span></a>
-        <a href="#" class="flex items-center space-x-2 text-white hover:text-gray-300"><span>❓</span><span>Help &
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>💬</span><span>Feedback</span></a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>❓</span><span>Help &
             Support</span></a>
       </nav>
     </aside>
@@ -72,9 +72,10 @@
       </div>
 
       <button id="toggleSales"
-        class="lg:hidden fixed top-4 right-4 z-50 bg-gray-600 text-white px-4 py-2 rounded-lg shadow-lg">
+        class="lg:hidden fixed top-4 right-1 z-50  border border-gray-500 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 text-black px-1 py-1 rounded-lg shadow-lg transition duration-200">
         Recent Sales
       </button>
+
 
       <!-- Actual Page Content -->
       <main class="flex flex-col lg:flex-row h-full overflow-hidden">
@@ -87,9 +88,10 @@
             <div class="relative w-full lg:w-1/2">
               <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
               <input type="text" placeholder="Search..."
-                class="w-full pl-10 p-2 border border-gray-300 rounded-lg shadow-sm" />
+                class="w-full pl-10 p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition duration-200" />
               <i class="fas fa-microphone absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
             </div>
+            
 
             <!-- Profile Section -->
             <div class="flex items-center space-x-4">
@@ -111,7 +113,7 @@
           </div>
 
           <!-- Stats -->
-          <div class="grid grid-cols-3 gap-4 mt-6">
+          <div class="grid md:grid-cols-4 grid-cols-2 gap-2 mt-5">
             <div class="bg-white p-6 rounded-lg shadow">
               <p class="text-gray-500">Total Products</p>
               <h3 class="text-xl font-bold">721</h3>
@@ -128,74 +130,166 @@
               <p class="text-gray-500">Out of Stock</p>
               <h3 class="text-xl font-bold">653</h3>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-              <p class="text-gray-500">Average Order Value</p>
-              <h3 class="text-xl font-bold">$653</h3>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-              <p class="text-gray-500">Total Orders Value <i></i></p>
-              <h3 class="text-xl font-bold">$653</h3>
-            </div>
+
           </div>
 
-          <!--Profit by category-->
-          <div class="w-full max-w-[900px] bg-white p-4 sm:p-5 rounded-xl shadow-md mt-5 mx-auto">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-base sm:text-lg">
-              <h2 class="font-semibold mb-2 sm:mb-0">Profit by Category</h2>
-              <span class="text-black text-base sm:text-lg">2025 <i
-                  class="fa-solid fa-caret-down text-black"></i></span>
-            </div>
+          <!--Profit and orders -->
+          <div class="w-full max-w-9/10 mx-auto mt-5 px-4">
+            <div class="flex flex-col md:flex-row gap-6">
 
-            <div class="flex flex-col md:flex-row gap-6 md:gap-8 mt-5">
-              <div class="flex-1 flex items-center justify-center">
-                <!-- Placeholder for donut chart -->
-                <div class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] bg-gray-200 rounded-full"></div>
-              </div>
+              <!-- Profit by Category -->
+              <div class="flex-1 bg-white p-6 rounded-lg shadow h-fit max-h-[300px] overflow-y-auto no-scrollbar">
+                <div
+                  class="flex flex-col grid-cols-2 sm:flex-row justify-between items-start sm:items-center text-base sm:text-lg">
+                  <h2 class="font-semibold mb-2 sm:mb-0">Profit by Category</h2>
+                  <div class="relative inline-block text-center">
+                    <select id="yearSelect"
+                      class=" bg-trasparent text-black text-sm sm:text-sm font-medium pr-6 focus:outline-none rounded-lg border border-gray-500 focus:ring-3 ">
+                      <option value="2025" selected>2025</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                    </select>
+                  </div>
 
-              <div class="flex-[1.5]">
-                <div class="mb-5">
-                  <p class="text-sm text-gray-500 m-0">Total Annual Profit</p>
-                  <h1 class="text-2xl md:text-3xl font-bold m-0">$1,000,000</h1>
                 </div>
 
-                <ul class="list-none p-0 space-y-3">
-                  <li class="flex justify-between items-center text-sm md:text-base">
-                    <span class="flex items-center">
-                      <span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: #D5EA6C;"></span>
-                      Women's Clothing (40%)
-                    </span>
-                    <span class="font-bold">$400,000</span>
-                  </li>
-                  <li class="flex justify-between items-center text-sm md:text-base">
-                    <span class="flex items-center">
-                      <span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: #6950b5;"></span>
-                      Accessories (25%)
-                    </span>
-                    <span class="font-bold">$250,000</span>
-                  </li>
-                  <li class="flex justify-between items-center text-sm md:text-base">
-                    <span class="flex items-center">
-                      <span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: #b04374;"></span>
-                      Men's Clothing (20%)
-                    </span>
-                    <span class="font-bold">$200,000</span>
-                  </li>
-                  <li class="flex justify-between items-center text-sm md:text-base">
-                    <span class="flex items-center">
-                      <span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: #973333;"></span>
-                      Footwear (10%)
-                    </span>
-                    <span class="font-bold">$100,000</span>
-                  </li>
-                  <li class="flex justify-between items-center text-sm md:text-base">
-                    <span class="flex items-center">
-                      <span class="inline-block w-3 h-3 rounded-sm mr-2" style="background-color: #b6366e;"></span>
-                      Children's Clothing (5%)
-                    </span>
-                    <span class="font-bold">$50,000</span>
-                  </li>
-                </ul>
+                <div class="flex flex-col md:flex-row gap-6 md:gap-8 mt-5">
+                  <div class="flex-1 flex items-center justify-center">
+                    <!-- Placeholder for donut chart -->
+                    <div class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] bg-gray-200 rounded-full"></div>
+                  </div>
+
+                  <div class="flex-[1.5]">
+                    <div class="mb-5">
+                      <p class="text-sm text-gray-500 m-0">Total Annual Profit</p>
+                      <h1 class="text-2xl md:text-3xl font-bold m-0">R1,000,000</h1>
+                    </div>
+
+                    <ul class="list-none p-0 space-y-3">
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #D5EA6C;"></span>
+                          Electronics
+                        </span>
+                        <span class="font-bold">R400,000</span>
+                      </li>
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #5c26d0;"></span>
+                          Fashion
+                        </span>
+                        <span class="font-bold">R250,000</span>
+                      </li>
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #1090b8;"></span>
+                          Health and Wellness
+                        </span>
+                        <span class="font-bold">R200,000</span>
+                      </li>
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #5a0d0d;"></span>
+                          Gaming & Media
+                        </span>
+                        <span class="font-bold">R100,000</span>
+                      </li>
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #b6366e;"></span>
+                          Camping & Outdoor
+                        </span>
+                        <span class="font-bold">R50,000</span>
+                      </li>
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #7836b6;"></span>
+                          Sports & Training
+                        </span>
+                        <span class="font-bold">R50,000</span>
+                      </li>
+                      <li class="flex justify-between items-center text-sm md:text-base">
+                        <span class="flex items-center">
+                          <span class="inline-block w-2 h-2 rounded-full mr-2"
+                            style="background-color: #43b636;"></span>
+                          Garden, Pool & Patio
+                        </span>
+                        <span class="font-bold">R50,000</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
+
+              <!-- Latest Orders -->
+              <div class="flex-1 bg-white p-6 rounded-lg shadow h-fit max-h-[300px] overflow-y-auto no-scrollbar">
+                <h3 class="text-lg font-semibold">Latest Orders</h3>
+                <table class="w-full mt-4 mb-2 text-left border-t">
+                  <thead>
+                    <tr>
+                      <th class="py-2 border-t">Order ID</th>
+                      <th>Product</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t">
+                      <td class="py-2">#2456JL</td>
+                      <td>Nike Sportswear</td>
+                      <td class="text-blue-500">Processing</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#5435DF</td>
+                      <td>Acqua di Parma</td>
+                      <td class="text-green-500">Completed</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#2456JL</td>
+                      <td>Nike Sportswear</td>
+                      <td class="text-blue-500">Processing</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#5435DF</td>
+                      <td>Acqua di Parma</td>
+                      <td class="text-green-500">Completed</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#5435DF</td>
+                      <td>Acqua di Parma</td>
+                      <td class="text-green-500">Completed</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#2456JL</td>
+                      <td>Nike Sportswear</td>
+                      <td class="text-blue-500">Processing</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#5435DF</td>
+                      <td>Acqua di Parma</td>
+                      <td class="text-green-500">Completed</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#2456JL</td>
+                      <td>Nike Sportswear</td>
+                      <td class="text-blue-500">Processing</td>
+                    </tr>
+                    <tr class="border-t">
+                      <td class="py-2">#5435DF</td>
+                      <td>Acqua di Parma</td>
+                      <td class="text-green-500">Completed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
             </div>
           </div>
 
@@ -214,11 +308,11 @@
                 <!-- Legend -->
                 <div class="flex space-x-4 mt-2 text-xs sm:text-sm">
                   <div class="flex items-center space-x-1">
-                    <span class="w-3 h-3 rounded-full bg-indigo-500 inline-block"></span>
+                    <span class="w-2 h-2 rounded-full bg-indigo-500 inline-block"></span>
                     <span>Revenue</span>
                   </div>
                   <div class="flex items-center space-x-1">
-                    <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span>
+                    <span class="w-2 h-2 rounded-full bg-blue-500 inline-block"></span>
                     <span>Order</span>
                   </div>
                 </div>
@@ -287,130 +381,30 @@
             </div>
           </div>
 
-          <!-- Latest Orders -->
-          <div class="bg-white p-6 mt-6 rounded-lg shadow h-60 mb-4 overflow-y-auto no-scrollbar">
-            <h3 class="text-lg font-semibold">Latest Orders</h3>
-            <table class="w-full mt-4 mb-2 text-left border-t">
-              <thead>
-                <tr>
-                  <th class="py-2 border-t">Order ID</th>
-                  <th>Product</th>
-                  <th>Order Date</th>
-                  <th>Price</th>
-                  <th>Payment</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-t">
-                  <td class="py-2">#2456JL</td>
-                  <td>Nike Sportswear</td>
-                  <td>Jan 12, 12:23 pm</td>
-                  <td>$134.00</td>
-                  <td>Transfer</td>
-                  <td class="text-blue-500">Processing</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#5435DF</td>
-                  <td>Acqua di Parma</td>
-                  <td>May 01, 01:13 pm</td>
-                  <td>$23.00</td>
-                  <td>Credit Card</td>
-                  <td class="text-green-500">Completed</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#2456JL</td>
-                  <td>Nike Sportswear</td>
-                  <td>Jan 12, 12:23 pm</td>
-                  <td>$134.00</td>
-                  <td>Transfer</td>
-                  <td class="text-blue-500">Processing</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#5435DF</td>
-                  <td>Acqua di Parma</td>
-                  <td>May 01, 01:13 pm</td>
-                  <td>$23.00</td>
-                  <td>Credit Card</td>
-                  <td class="text-green-500">Completed</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#2456JL</td>
-                  <td>Nike Sportswear</td>
-                  <td>Jan 12, 12:23 pm</td>
-                  <td>$134.00</td>
-                  <td>Transfer</td>
-                  <td class="text-blue-500">Processing</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#5435DF</td>
-                  <td>Acqua di Parma</td>
-                  <td>May 01, 01:13 pm</td>
-                  <td>$23.00</td>
-                  <td>Credit Card</td>
-                  <td class="text-green-500">Completed</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#2456JL</td>
-                  <td>Nike Sportswear</td>
-                  <td>Jan 12, 12:23 pm</td>
-                  <td>$134.00</td>
-                  <td>Transfer</td>
-                  <td class="text-blue-500">Processing</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#5435DF</td>
-                  <td>Acqua di Parma</td>
-                  <td>May 01, 01:13 pm</td>
-                  <td>$23.00</td>
-                  <td>Credit Card</td>
-                  <td class="text-green-500">Completed</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#2456JL</td>
-                  <td>Nike Sportswear</td>
-                  <td>Jan 12, 12:23 pm</td>
-                  <td>$134.00</td>
-                  <td>Transfer</td>
-                  <td class="text-blue-500">Processing</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-2">#5435DF</td>
-                  <td>Acqua di Parma</td>
-                  <td>May 01, 01:13 pm</td>
-                  <td>$23.00</td>
-                  <td>Credit Card</td>
-                  <td class="text-green-500">Completed</td>
-                </tr>
-                <tr class="border-t">
-                  <td class="py-4" colspan="6"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+
 
         </main>
 
         <!-- Recent Sales Sidebar -->
         <aside id="recentSalesPanel"
-          class="fixed top-0 right-0 w-80 max-w-full bg-white p-4 rounded-l-lg shadow h-full overflow-y-auto no-scrollbar transform translate-x-full transition-transform duration-300 ease-in-out z-40 md:relative md:translate-x-0 md:w-1/4 md:rounded-lg md:block hidden">
+          class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 lg:translate-x-0 lg:static lg:block pl-4 pr-2 pt-4">
           <h3 class="text-lg font-semibold mb-4">Recent Sales</h3>
           <ul class="space-y-3">
             <li class="border-b pb-2">
               <div class="font-semibold">Order #1023</div>
-              <div class="text-sm text-gray-500">Nike Sneakers - $89.99</div>
+              <div class="text-sm text-gray-500">Nike Sneakers - R89.99</div>
             </li>
             <li class="border-b pb-2">
               <div class="font-semibold">Order #1022</div>
-              <div class="text-sm text-gray-500">Apple Watch - $299.00</div>
+              <div class="text-sm text-gray-500">Apple Watch - R299.00</div>
             </li>
             <li class="border-b pb-2">
               <div class="font-semibold">Order #1021</div>
-              <div class="text-sm text-gray-500">Adidas Hoodie - $49.50</div>
+              <div class="text-sm text-gray-500">Adidas Hoodie - R49.50</div>
             </li>
             <li class="border-b pb-2">
               <div class="font-semibold">Order #1020</div>
-              <div class="text-sm text-gray-500">Perfume - $120.00</div>
+              <div class="text-sm text-gray-500">Perfume - R120.00</div>
             </li>
             <li>
               <a href="#" class="text-indigo-600 text-sm font-medium">View All Sales →</a>
@@ -431,16 +425,68 @@
     }
   </script>
 
-<script>
-  const toggleBtn = document.getElementById('toggleSales');
-  const salesPanel = document.getElementById('recentSalesPanel');
+  <script>
+    const toggleBtn = document.getElementById('toggleSales');
+    const salesPanel = document.getElementById('recentSalesPanel');
 
-  toggleBtn.addEventListener('click', () => {
-    salesPanel.classList.toggle('translate-x-full');
-  });
-</script>
+    function isLargeScreen() {
+      return window.innerWidth >= 1024; // Tailwind's lg breakpoint
+    }
+
+    function openPanel() {
+      salesPanel.classList.remove('translate-x-full');
+      toggleBtn.classList.add('hidden');
+    }
+
+    function closePanel() {
+      salesPanel.classList.add('translate-x-full');
+      toggleBtn.classList.remove('hidden');
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openPanel();
+    });
+
+    document.body.addEventListener('click', (e) => {
+      if (!isLargeScreen() && !salesPanel.classList.contains('translate-x-full')) {
+        closePanel();
+      }
+    });
+
+    salesPanel.addEventListener('click', (e) => e.stopPropagation());
+
+    // Swipe right to close
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    salesPanel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    salesPanel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) {
+        closePanel();
+      }
+    });
+
+    // On resize, reset states
+    window.addEventListener('resize', () => {
+      if (isLargeScreen()) {
+        salesPanel.classList.remove('translate-x-full');
+        toggleBtn.classList.add('hidden');
+      } else {
+        salesPanel.classList.add('translate-x-full');
+        toggleBtn.classList.remove('hidden');
+      }
+    });
+  </script>
+
+
+
+
 
 </body>
 
 </html>
-
