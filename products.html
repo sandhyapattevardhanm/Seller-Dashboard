@@ -1,237 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products | Seller Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
 
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Seller Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    crossorigin="anonymous"></script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
 
-  <body class="bg-gray-100 font-sans">
-    <!-- Mobile Hamburger -->
-    <header
-      class="lg:hidden flex items-center justify-between bg-white p-4 shadow fixed top-0 left-0 right-0 z-40"
-    >
-      <button id="hamburger" class="text-2xl focus:outline-none">☰</button>
-    </header>
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
 
-    <div class="flex lg:h-screen">
-      <!-- Sidebar -->
-      <aside
-        id="sidebar"
-        class="fixed top-0 left-0 w-64 h-full bg-black text-white p-6 space-y-4 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
-      >
-        <h1 class="text-xl font-bold mb-4">LOGO-NAME</h1>
-        <nav class="space-y-4">
-          <a
-            href="index.html"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>🏠</span><span>Overview</span></a
-          >
-          <a
-            href="products.html"
-            class="flex items-center space-x-2 text-white font-semibold"
-            ><span>🛒</span><span>Products</span></a
-          >
-          <a
-            href="orders.html"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>📦</span><span>Orders</span></a
-          >
-          <a
-            href="shipment.html"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>🚚</span><span>Shipment</span></a
-          >
-          <a
-            href="return.html"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-          >
-            <span>🔁</span><span>Returns & Refunds</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>⚙️</span><span>Store Setting</span></a
-          >
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>🤝</span><span>Platform Partner</span></a
-          >
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>💬</span><span>Feedback</span></a
-          >
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-gray-300 hover:text-white"
-            ><span>❓</span><span>Help & Support</span></a
-          >
-        </nav>
-      </aside>
+<body class="bg-gray-100 font-sans">
+  <!-- Mobile Hamburger -->
+  <header class="lg:hidden flex items-center justify-between bg-white p-4 shadow fixed top-0 left-0 right-0 z-40">
+    <button id="hamburger" class="text-2xl focus:outline-none">☰</button>
+  </header>
 
-      <!-- Overlay -->
-      <div
-        id="overlay"
-        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"
-      ></div>
+  <div class="flex lg:h-screen">
+    <!-- Sidebar -->
+    <aside id="sidebar"
+      class="fixed top-0 left-0 w-64 h-full bg-black text-white p-6 space-y-4 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
+      <h1 class="text-xl font-bold mb-4">LOGO-NAME</h1>
+      <nav class="space-y-4">
+        <a href="index.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>🏠</span><span>Overview</span></a>
+        <a href="products.html"
+          class="flex items-center space-x-2 text-white font-semibold"><span>🛒</span><span>Products</span></a>
+        <a href="orders.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>📦</span><span>Orders</span></a>
+        <a href="shipment.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>🚚</span><span>Shipment</span></a>
+        <a href="return.html" class="flex items-center space-x-2 text-gray-300 hover:text-white">
+          <span>🔁</span><span>Returns & Refunds</span>
+        </a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>⚙️</span><span>Store
+            Setting</span></a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>🤝</span><span>Platform
+            Partner</span></a>
+        <a href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>💬</span><span>Feedback</span></a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-white"><span>❓</span><span>Help &
+            Support</span></a>
+      </nav>
+    </aside>
 
-      <!-- Main Content -->
-      <main
-        class="flex-1 lg:mt-0 mb-6 lg:ml-64 p-6 pt-16 lg:pt-4 overflow-y-auto max-h-screen"
-      >
-        <h2 class="text-2xl mt-2 font-bold mb-6">Upload Product</h2>
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <!-- Video Upload -->
-          <div
-            class="border-2 border-dashed border-gray-300 p-6 text-center rounded-lg mb-6"
-          >
-            <input
-              type="file"
-              accept="video/*"
-              class="hidden"
-              id="video-upload"
-            />
-            <label for="video-upload" class="cursor-pointer">
-              <i class="fas fa-upload text-gray-400 text-3xl"></i>
-              <p class="text-gray-600 mt-2">Click to upload product video</p>
-              <p class="text-gray-400 text-sm">(MP4, MOV - Max 5GB)</p>
-            </label>
+    <!-- Main Content -->
+    <main class="flex-1 lg:mt-0 mb-6 lg:ml-64 p-6 pt-16 lg:pt-4 overflow-y-auto max-h-screen">
+      <h2 class="text-2xl mt-2 font-bold mb-6">Upload Product</h2>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <!-- Video Upload -->
+        <div class="border-2 border-dashed border-gray-300 p-6 text-center rounded-lg mb-6">
+          <input type="file" accept="video/*" class="hidden" id="video-upload" />
+          <label for="video-upload" class="cursor-pointer">
+            <i class="fas fa-upload text-gray-400 text-3xl"></i>
+            <p class="text-gray-600 mt-2">Click to upload product video</p>
+            <p class="text-gray-400 text-sm">(MP4, MOV - Max 5GB)</p>
+          </label>
+        </div>
+
+        <!-- Product Form -->
+        <form class="space-y-4">
+          <div>
+            <label class="block text-gray-700 font-semibold">Product Title</label>
+            <input type="text" placeholder="Enter product title" class="w-full p-2 border rounded" required />
           </div>
 
-          <!-- Product Form -->
-          <form class="space-y-4">
+          <div>
+            <label class="block text-gray-700 font-semibold">Description</label>
+            <textarea placeholder="Enter product description" class="w-full p-2 border rounded" rows="4"
+              required></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-gray-700 font-semibold"
-                >Product Title</label
-              >
-              <input
-                type="text"
-                placeholder="Enter product title"
-                class="w-full p-2 border rounded"
-                required
-              />
+              <label class="block text-gray-700 font-semibold">Price</label>
+              <input type="number" placeholder="0.00" class="w-full p-2 border rounded" required />
             </div>
-
             <div>
-              <label class="block text-gray-700 font-semibold"
-                >Description</label
-              >
-              <textarea
-                placeholder="Enter product description"
-                class="w-full p-2 border rounded"
-                rows="4"
-                required
-              ></textarea>
+              <label class="block text-gray-700 font-semibold">Quantity</label>
+              <input type="number" placeholder="0" class="w-full p-2 border rounded" required />
             </div>
+          </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-gray-700 font-semibold">Price</label>
-                <input
-                  type="number"
-                  placeholder="0.00"
-                  class="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-              <div>
-                <label class="block text-gray-700 font-semibold"
-                  >Quantity</label
-                >
-                <input
-                  type="number"
-                  placeholder="0"
-                  class="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-            </div>
+          <div>
+            <label class="block text-gray-700 font-semibold">Thumbnail Image</label>
+            <input type="file" accept="image/*" class="w-full p-2 border rounded" required />
+          </div>
 
-            <div>
-              <label class="block text-gray-700 font-semibold"
-                >Thumbnail Image</label
-              >
-              <input
-                type="file"
-                accept="image/*"
-                class="w-full p-2 border rounded"
-                required
-              />
-            </div>
+          <div>
+            <label class="block text-gray-700 font-semibold">Category</label>
+            <select class="w-full p-2 border rounded">
+              <option>Select Category</option>
+              <option>Clothing</option>
+              <option>Electronics</option>
+              <option>Home & Kitchen</option>
+              <option>Beauty & Health</option>
+            </select>
+          </div>
 
-            <div>
-              <label class="block text-gray-700 font-semibold">Category</label>
-              <select class="w-full p-2 border rounded">
-                <option>Select Category</option>
-                <option>Clothing</option>
-                <option>Electronics</option>
-                <option>Home & Kitchen</option>
-                <option>Beauty & Health</option>
-              </select>
-            </div>
+          <div>
+            <label class="block text-gray-700 font-semibold">Brand</label>
+            <input type="text" placeholder="Enter brand name" class="w-full p-2 border rounded" required />
+          </div>
 
-            <div>
-              <label class="block text-gray-700 font-semibold">Brand</label>
-              <input
-                type="text"
-                placeholder="Enter brand name"
-                class="w-full p-2 border rounded"
-                required
-              />
-            </div>
+          <div class="flex justify-end space-x-4">
+            <button type="reset" class="bg-gray-300 text-black px-6 py-2 rounded">
+              Cancel
+            </button>
+            <button type="submit" class="bg-black text-white px-6 py-2 rounded">
+              Upload Product
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
 
-            <div class="flex justify-end space-x-4">
-              <button
-                type="reset"
-                class="bg-gray-300 text-black px-6 py-2 rounded"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                class="bg-black text-white px-6 py-2 rounded"
-              >
-                Upload Product
-              </button>
-            </div>
-          </form>
-        </div>
-      </main>
-    </div>
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const hamburger = document.getElementById("hamburger");
 
-    <script>
-      // Sidebar toggle
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-      const hamburger = document.getElementById("hamburger");
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.remove("-translate-x-full");
+      overlay.classList.remove("hidden");
+    });
 
-      hamburger.addEventListener("click", () => {
-        sidebar.classList.remove("-translate-x-full");
-        overlay.classList.remove("hidden");
-      });
+    overlay.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  </script>
+</body>
 
-      overlay.addEventListener("click", () => {
-        sidebar.classList.add("-translate-x-full");
-        overlay.classList.add("hidden");
-      });
-    </script>
-  </body>
 </html>
