@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipment | Seller Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-black font-sans">
+    <!-- Hamburger & Topbar (visible on mobile) -->
+    <header
+      class="lg:hidden flex items-center justify-between bg-white p-4 shadow fixed top-0 left-0 right-0 z-40"
+    >
+      <button id="hamburger" class="text-2xl focus:outline-none">☰</button>
+    </header>
+
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 left-0 w-64 h-full bg-black text-white p-6 space-y-4 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+    >
+      <h1 class="text-xl font-bold mb-4">LOGO-NAME</h1>
+      <nav class="space-y-4">
+        <a
+          href="index.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🏠</span><span>Overview</span>
+        </a>
+        <a
+          href="products.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🛒</span><span>Products</span>
+        </a>
+        <a
+          href="orders.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>📦</span><span>Orders</span>
+        </a>
+        <a
+          href="shipment.html"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🚚</span><span>Shipment</span>
+        </a>
+        <a
+          href="return.html"
+          class="flex items-center space-x-2 text-white font-semibold"
+        >
+          <span>🔁</span><span>Returns & Refunds</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>⚙️</span><span>Store Setting</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>🤝</span><span>Platform Partner</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>💬</span><span>Feedback</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-2 text-gray-300 hover:text-white"
+        >
+          <span>❓</span><span>Help & Support</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"
+    ></div>
+
+    <!-- Main Content -->
+    <main
+      class="flex-1 lg:ml-64 p-4 pt-16 lg:pt-4"
+      style="
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        height: 100vh;
+      "
+      onscroll="this.style.scrollbarWidth='none'"
+    >
+      <style>
+        main::-webkit-scrollbar {
+          display: none;
+        }
+      </style>
+      <h2 class="text-xl font-bold mb-4 mt-2">Return Requests</h2>
+
+      <div class="space-y-4">
+        <!-- Return Request Card -->
+        <div class="bg-white rounded shadow p-4 text-sm">
+          <div
+            onclick="toggleDetails(this)"
+            class="flex justify-between items-center cursor-pointer"
+          >
+            <div>
+              <p class="font-semibold text-base">Sneakers - Size 9</p>
+              <p class="text-gray-500 text-xs">
+                Customer: Alex • Date: Mar 30, 2025
+              </p>
+              <p
+                class="text-xs mt-2 inline-block bg-yellow-100 text-yellow-800 px-3 py-0.5 rounded-full w-fit"
+              >
+                Pending
+              </p>
+            </div>
+            <span class="text-xs text-blue-600">View Details</span>
+          </div>
+
+          <div class="mt-3 hidden">
+            <div class="space-y-3">
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Return Reason</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">
+                  Size doesn't fit properly
+                </p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Refund Method</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">
+                  Original Payment Method
+                </p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Customer Comments</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">
+                  I received the order last week and realized the size is not
+                  right.
+                </p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Uploaded Image</label
+                >
+                <div class="w-24 h-24 border rounded overflow-hidden">
+                  <img
+                    src="https://via.placeholder.com/150"
+                    alt="Proof"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <!-- Only show buttons if status is Pending -->
+              <div class="flex justify-end space-x-3 pt-2">
+                <button
+                  class="px-3 py-1 rounded bg-gray-300 text-black text-xs"
+                >
+                  Reject
+                </button>
+                <button class="px-3 py-1 rounded bg-black text-white text-xs">
+                  Approve
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Approved Request -->
+        <div class="bg-white rounded shadow p-4 text-sm">
+          <div
+            onclick="toggleDetails(this)"
+            class="flex justify-between items-center cursor-pointer"
+          >
+            <div>
+              <p class="font-semibold text-base">Smart Watch - Black</p>
+              <p class="text-gray-500 text-xs">
+                Customer: Cathy • Date: Mar 28, 2025
+              </p>
+              <p
+                class="text-xs mt-2 inline-block bg-green-100 text-green-800 px-3 py-0.5 rounded-full w-fit"
+              >
+                Approved
+              </p>
+            </div>
+            <span class="text-xs text-blue-600">View Details</span>
+          </div>
+
+          <div class="mt-3 hidden">
+            <div class="space-y-3">
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Return Reason</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">Battery issue</p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Refund Method</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">Store Credit</p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Customer Comments</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">
+                  Watch turns off randomly, I want to return it.
+                </p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Uploaded Image</label
+                >
+                <div class="w-24 h-24 border rounded overflow-hidden">
+                  <img
+                    src="https://via.placeholder.com/150"
+                    alt="Proof"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <!-- No action buttons for approved -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Rejected Request -->
+        <div class="bg-white rounded shadow p-4 text-sm">
+          <div
+            onclick="toggleDetails(this)"
+            class="flex justify-between items-center cursor-pointer"
+          >
+            <div>
+              <p class="font-semibold text-base">Smart Watch - Black</p>
+              <p class="text-gray-500 text-xs">
+                Customer: Cathy • Date: Mar 28, 2025
+              </p>
+              <p
+                class="text-xs mt-2 inline-block bg-red-100 text-red-800 px-3 py-0.5 rounded-full w-fit"
+              >
+                Rejected
+              </p>
+            </div>
+            <span class="text-xs text-blue-600">View Details</span>
+          </div>
+
+          <div class="mt-3 hidden">
+            <div class="space-y-3">
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Return Reason</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">Battery issue</p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Refund Method</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">Store Credit</p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Customer Comments</label
+                >
+                <p class="bg-gray-100 rounded px-3 py-1.5">
+                  Watch turns off randomly, I want to return it.
+                </p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Uploaded Image</label
+                >
+                <div class="w-24 h-24 border rounded overflow-hidden">
+                  <img
+                    src="https://via.placeholder.com/150"
+                    alt="Proof"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <!-- No action buttons for rejected -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function toggleDetails(container) {
+        const content = container.nextElementSibling;
+        content.classList.toggle("hidden");
+      }
+    </script>
+
+    <!-- JS -->
+    <script>
+      // Sidebar toggle
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const hamburger = document.getElementById("hamburger");
+
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
